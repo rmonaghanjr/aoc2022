@@ -1,0 +1,19 @@
+# Day 1 Solution
+with open("./input.txt", "r") as f:
+    contents = f.read().split("\n\n")
+
+    max_c = 0
+    h = []
+    for bag in contents:
+        c = sum([int(n) for n in bag.split("\n")])
+
+        if c > max_c:
+            h.append(max_c)
+            max_c = c
+    # part 1        
+    print(max_c)
+
+    # part 2
+    print(sum(sorted(h)[len(h) - 2:]) + max_c)
+        
+        
